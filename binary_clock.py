@@ -1,12 +1,12 @@
 import time
 
-# Function to convert decimal to binary and format to specified number of bits
+#Fuction to convert decimal to binary and format to specified number of bits
 def decimal_to_binary(num, num_bits):
     return format(num, f'0{num_bits}b')
 
 # Function to display the binary watch with LED-like ASCII symbols
 def display_binary_watch(hour, minute, second):
-    binary_hour = decimal_to_binary(hour, 4)
+    binary_hour = decimal_to_binary(hour, 5)
     binary_minute = decimal_to_binary(minute, 6)
     binary_second = decimal_to_binary(second, 6)
 
@@ -16,9 +16,9 @@ def display_binary_watch(hour, minute, second):
 
     # Display binary watch with LED-like ASCII symbols
     print("Binary Watch with LED-like ASCII symbols (HH:MM:SS):")
-    print(f"{LED_ON if binary_hour[0] == '1' else LED_OFF} {LED_ON if binary_hour[1] == '1' else LED_OFF} {LED_ON if binary_hour[2] == '1' else LED_OFF} {LED_ON if binary_hour[3] == '1' else LED_OFF}    {LED_ON if binary_minute[0] == '1' else LED_OFF} {LED_ON if binary_minute[1] == '1' else LED_OFF} {LED_ON if binary_minute[2] == '1' else LED_OFF} {LED_ON if binary_minute[3] == '1' else LED_OFF} {LED_ON if binary_minute[4] == '1' else LED_OFF} {LED_ON if binary_minute[5] == '1' else LED_OFF}    {LED_ON if binary_second[0] == '1' else LED_OFF} {LED_ON if binary_second[1] == '1' else LED_OFF} {LED_ON if binary_second[2] == '1' else LED_OFF} {LED_ON if binary_second[3] == '1' else LED_OFF} {LED_ON if binary_second[4] == '1' else LED_OFF} {LED_ON if binary_second[5] == '1' else LED_OFF}")
-    print("-- -- -- --    -- -- -- -- -- --    -- -- -- -- -- --")
-    print("08 04 02 01    32 16 08 04 02 01    32 16 08 04 02 01")
+    print(f"{LED_ON if binary_hour[0] == '1' else LED_OFF} {LED_ON if binary_hour[1] == '1' else LED_OFF} {LED_ON if binary_hour[2] == '1' else LED_OFF} {LED_ON if binary_hour[3] == '1' else LED_OFF} {LED_ON if binary_hour[4] == '1' else LED_OFF}    {LED_ON if binary_minute[0] == '1' else LED_OFF} {LED_ON if binary_minute[1] == '1' else LED_OFF} {LED_ON if binary_minute[2] == '1' else LED_OFF} {LED_ON if binary_minute[3] == '1' else LED_OFF} {LED_ON if binary_minute[4] == '1' else LED_OFF} {LED_ON if binary_minute[5] == '1' else LED_OFF}    {LED_ON if binary_second[0] == '1' else LED_OFF} {LED_ON if binary_second[1] == '1' else LED_OFF} {LED_ON if binary_second[2] == '1' else LED_OFF} {LED_ON if binary_second[3] == '1' else LED_OFF} {LED_ON if binary_second[4] == '1' else LED_OFF} {LED_ON if binary_second[5] == '1' else LED_OFF}")
+    print("-- -- -- -- --    -- -- -- -- -- --    -- -- -- -- -- --")
+    print("16 08 04 02 01    32 16 08 04 02 01    32 16 08 04 02 01")
 
 # Main function
 def main():
@@ -44,3 +44,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
