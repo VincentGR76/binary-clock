@@ -13,8 +13,6 @@ def display_binary_watch(hour, minute, second):
     # Define LED-like ASCII symbols
     LED_ON = "\033[92m██\033[0m"
     LED_OFF = "\033[91m██\033[0m"
-    #LED_ON = "\033[92m██\033[0m"  # Green LED
-    #LED_OFF = "\033[41m\033[91m██\033[0m"  # Red background
 
     # Display binary watch with LED-like ASCII symbols
     print("Binary Watch with LED-like ASCII symbols (HH:MM:SS):")
