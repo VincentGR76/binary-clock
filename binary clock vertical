@@ -1,0 +1,61 @@
+import time
+
+# Function to convert decimal to binary and format to specified number of bits
+def decimal_to_binary(num, num_bits):
+    return format(num, f'0{num_bits}b')
+
+# Function to display the binary watch with LED-like ASCII symbols
+def display_binary_watch(hour, minute, second):
+    binary_hour = decimal_to_binary(hour, 5)[::1]
+    binary_minute = decimal_to_binary(minute, 6)[::1]
+    binary_second = decimal_to_binary(second, 6)[::1]
+
+    # Define LED-like ASCII symbols
+    LED_ON_GREEN = "\033[92m██\033[0m"
+    LED_OFF_RED = "\033[91m██\033[0m"
+
+    # Display binary watch with LED-like ASCII symbols
+    print("Hour:")
+    for bit in binary_hour:
+        print(LED_ON_GREEN if bit == '1' else LED_OFF_RED, end=" ")
+    print("\n16 08 04 02 01")
+    print(" " * 10, end="")
+    print("  ")
+    print("Minute:")
+    for bit in binary_minute:
+        print(LED_ON_GREEN if bit == '1' else LED_OFF_RED, end=" ")
+    print("\n32 16 08 04 02 01")
+    print(" " * 10, end="")
+    print("  ")
+    print("Second:")
+    for bit in binary_second:
+        print(LED_ON_GREEN if bit == '1' else LED_OFF_RED, end=" ")
+    print("\n32 16 08 04 02 01")
+    print(" " * 10, end="")
+    print("  ")
+
+# Main function
+def main():
+    try:
+        while True:
+            # Get current time
+            current_time = time.localtime()
+            hour = current_time.tm_hour
+            minute = current_time.tm_min
+            second = current_time.tm_sec
+
+            # Display binary watch with LED-like ASCII symbols
+            display_binary_watch(hour, minute, second)
+
+            # Refresh every second
+            time.sleep(1)
+
+            # Clear terminal for new display
+            print("\033[H\033[J", end="")
+
+    except KeyboardInterrupt:
+        print("\nBinary watch stopped.")
+
+if __name__ == "__main__":
+    main()
+
